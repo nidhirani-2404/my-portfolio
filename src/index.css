@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --dot: rgba(15, 15, 15, 0.09);
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor targets so the sticky nav never covers a heading. */
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+    background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+    background-size: 22px 22px;
+    /* Nothing on this page is meant to scroll sideways. */
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-extrabold tracking-tight;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    @apply bg-violet text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-4 ring-violet/40 ring-offset-2 ring-offset-cream rounded-lg;
+  }
+}
+
+@layer components {
+  /* The one shape the whole page is built from: hard black border + offset shadow. */
+  .card {
+    @apply rounded-2xl border-[2.5px] border-ink bg-white shadow-brut-md;
+  }
+
+  .card-hover {
+    @apply transition-[transform,box-shadow] duration-200 ease-out
+           hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-brut-lg;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border-2 border-ink
+           px-3 py-1 text-xs font-bold font-display;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-[2.5px] border-ink
+           px-5 py-3 text-sm font-bold font-display shadow-brut
+           transition-[transform,box-shadow] duration-150 ease-out
+           hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-brut-md
+           active:translate-x-[1px] active:translate-y-[1px] active:shadow-brut-sm;
+  }
+
+  .btn-icon {
+    @apply inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl
+           border-[2.5px] border-ink bg-white shadow-brut
+           transition-[transform,box-shadow] duration-150 ease-out
+           hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-brut-md
+           active:translate-x-[1px] active:translate-y-[1px] active:shadow-brut-sm;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em];
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect users who have asked the OS to cut down on motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-float,
+  .animate-marquee {
+    animation: none !important;
+  }
+}
