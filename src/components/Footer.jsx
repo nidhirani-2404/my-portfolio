@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Linkedin, Mail, Phone } from 'lucide-react'
 import { Shell } from './Section'
 import { links, profile } from '../data/content'
 
@@ -32,6 +32,11 @@ export default function Footer() {
           >
             <Linkedin className="h-[18px] w-[18px]" aria-hidden="true" />
           </a>
+          {links.phone && (
+            <a href={links.phone} className="btn-icon" aria-label="Call phone number">
+              <Phone className="h-[18px] w-[18px]" aria-hidden="true" />
+            </a>
+          )}
           <a href={links.email} className="btn-icon" aria-label="Send an email">
             <Mail className="h-[18px] w-[18px]" aria-hidden="true" />
           </a>

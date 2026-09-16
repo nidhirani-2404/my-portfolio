@@ -8,7 +8,7 @@
  * While this is empty the Resume button renders disabled instead of linking nowhere.
  * Drive tip: use the "Anyone with the link" share URL.
  */
-export const RESUME_URL = ''
+export const RESUME_URL = './resume.pdf'
 
 export const profile = {
   name: 'Nidhi Rani',
@@ -20,6 +20,7 @@ export const profile = {
     'I’m a recent B.Tech graduate from IIT (ISM) Dhanbad with hands-on experience in full-stack development and LLM-powered applications. I enjoy building practical software, solving challenging problems, and exploring how modern AI can be integrated into real-world products.',
   supporting: 'Building products. Solving problems. Learning continuously.',
   email: 'nidhirani2404@gmail.com',
+  phone: '+91 9304956687',
   photo: './nidhi.jpg',
   photoAlt: 'Portrait of Nidhi Rani',
   stickerLabel: 'MERN + LLM Developer',
@@ -34,6 +35,8 @@ export const links = {
   codeforces: 'https://codeforces.com/profile/nidhirani2404',
   naukri: 'https://www.naukri.com/',
   email: 'mailto:nidhirani2404@gmail.com',
+  gmail: 'https://mail.google.com/mail/?view=cm&fs=1&to=nidhirani2404@gmail.com',
+  phone: 'tel:+919304956687',
 }
 
 export const navLinks = [
@@ -49,7 +52,7 @@ export const heroChips = [
   { label: 'IIT (ISM) Dhanbad', color: 'bg-violet-soft' },
   { label: 'B.Tech Graduate, 2026', color: 'bg-mint' },
   { label: 'Software Engineering Intern', color: 'bg-sky' },
-  { label: '500+ DSA Problems', color: 'bg-coral' },
+  { label: 'DSA Problems', color: 'bg-coral' },
 ]
 
 export const about = {
@@ -76,7 +79,7 @@ export const about = {
     {
       icon: 'Binary',
       title: 'Problem Solver',
-      body: 'Solved 500+ Data Structures & Algorithms problems while developing a strong foundation in problem solving.',
+      body: 'Solved Data Structures & Algorithms problems while developing a strong foundation in problem solving.',
       color: 'bg-mint',
     },
     {
@@ -362,7 +365,7 @@ export const achievements = {
     {
       icon: 'Target',
       title: 'DSA Practice',
-      body: 'Solved 500+ Data Structures & Algorithms problems across LeetCode and GeeksforGeeks.',
+      body: 'Solved Data Structures & Algorithms problems across LeetCode and GeeksforGeeks.',
       color: 'bg-mint',
     },
   ],
@@ -374,7 +377,7 @@ export const codingProfiles = {
     {
       platform: 'LeetCode',
       handle: '@nidhirani2404',
-      note: '500+ DSA Problems',
+      note: 'DSA Problems',
       url: links.leetcode,
       color: 'bg-sun',
     },
@@ -413,6 +416,7 @@ export const contact = {
   socials: [
     { label: 'GitHub', url: links.github, icon: 'Github' },
     { label: 'LinkedIn', url: links.linkedin, icon: 'Linkedin' },
+    { label: 'Phone', url: links.phone, icon: 'Phone' },
     { label: 'LeetCode', url: links.leetcode, icon: 'Code2' },
     { label: 'CodeChef', url: links.codechef, icon: 'ChefHat' },
     { label: 'Codeforces', url: links.codeforces, icon: 'Binary' },
